@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="username">
+	<input type="text" id="password">
+	<input type="button" value="提交" id="submit">
+	
+	<script src="jquery-3.2.1.min.js"></script>
+	<script>
+
+		$('#submit').click(function() {
+			$.ajax({
+				type:'get',
+				url:'login.php',
+				data:{
+					username:$('#username').val(),
+					password:$('#password').val()
+				},
+				success:function(d) {
+					alert(d);
+				}
+			})
+		})
+	</script>
+</body>
+</html>
